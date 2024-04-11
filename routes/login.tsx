@@ -2,7 +2,7 @@ import { FreshContext, Handlers } from "$fresh/server.ts";
 import axios from "npm:axios";
 import LoginProfile from "../islands/LoginProfile.tsx";
 
-const handler:Handlers = {
+export const handler:Handlers = {
     GET: async(_req:Request, ctx: FreshContext) => {
         return ctx.render();
     },
