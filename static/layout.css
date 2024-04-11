@@ -1,0 +1,97 @@
+@keyframes catMove {
+    0% { transform: translateX(0vw) scaleX(1); }
+    25% { transform: translateX(45vw) scaleX(1); }
+    50% { transform: translateX(95vw) scaleX(-1); }
+    75% { transform: translateX(45vw) scaleX(-1); }
+    100% { transform: translateX(0vw) scaleX(1); }
+  }
+  
+  .rCatRainbow{
+    background-image: url("https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExemF2aTdvM3d2ZTcyYWVwNm81Y2Z3YWtpZm8wd3dkMmluaThyMHh4MCZlcD12MV9zdGlja2Vyc19zZWFyY2gmY3Q9cw/bjE9JbNSckM0w/giphy.gif");
+    animation: catMove 10s linear infinite;
+    background-size: cover;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    top: 5%;
+    left: 0%;
+    right: 0%;
+    font-family: "Protest Revolution", sans-serif;
+    font-size: xx-large;
+    text-align: center;
+    color: white;
+    z-index: -1;
+  }
+  
+  .layout {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      z-index: 2;
+    }
+
+    .titleContainer {
+      flex-grow: 1;
+      display: flex;
+      justify-content: center;
+  }
+
+    .topLayout {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      z-index: 2;
+      padding: 0 20px;
+  }
+  
+  .loginBut {
+      margin-right: 5%;
+      text-decoration: none;
+      color: #2e347f;
+      font-family: 'Bangers';
+      border: 2px solid #2e347f;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+  }
+
+  .loginBut:hover {
+      box-shadow: 0 0 50px #2e347f;
+      color: #efe7fb;
+      text-shadow: 0 0 10px #efe7fb;
+      transform: scale(1.1);
+  }
+  
+  h1 {
+      color: #2e347f;
+      font-family: 'Bangers', cursive;
+      text-align: center;
+  }
+    
+    .menu {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+      margin-bottom: 2rem;
+      z-index: 2;
+    }
+    
+    .menu a {
+      text-decoration: none;
+      color: #2e347f;
+      font-family: 'Bangers';
+      border: 2px solid #2e347f;
+      padding: 10px 20px;
+      transition: all 0.3s ease;
+    }
+    
+    .menu a:hover {
+      box-shadow: 0 0 50px #2e347f;
+      color: #efe7fb;
+      text-shadow: 0 0 10px #efe7fb;
+      transform: scale(1.1);
+    }
+  

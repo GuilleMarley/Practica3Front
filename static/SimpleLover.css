@@ -1,0 +1,42 @@
+.lovely {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+    background-color: #efe7fb;
+    border: 2px solid #2e347f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #2e347f;
+    color: #2e347f;
+    font-family: 'Bangers', cursive;
+    transition: all 0.3s ease;
+  }
+  
+  .lovely h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+  
+  .lovely p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .lovely img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #2e347f;
+  }
+  
+  .lovely p strong {
+    font-size: 1.3rem;
+  }
+  
+  .lovely:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #2e347f;
+  }
