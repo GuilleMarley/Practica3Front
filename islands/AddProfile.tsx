@@ -13,7 +13,7 @@ const AddProfile:FunctionComponent = () => {
     const [error, setError] = useState<string>("");
 
     return (
-        <form action = "/" method = "POST">
+        <form action = "/" method = "POST" class="add-form">
         
             <input type = "text" name = "name" placeholder = "Name" value = {name} onInput = {(e) => setName(e.currentTarget.value)}/>
             <input type = "password" name = "password" placeholder = "Password" value = {password} onInput = {(e) => setPassword(e.currentTarget.value)}/>

@@ -2,12 +2,12 @@ import {FunctionalComponent} from 'preact';
 import { Lover } from "../types.ts";
 import SimpleLove from "./SimpleLove.tsx";
 
-const MapLove: FunctionalComponent<Lover[]> = (props) => {
-    const {lovers} = props;
-    
+const MapLove: FunctionalComponent<{props: Lover[]}> = (props) => { 
+    console.log("-------------------------------------------------",props.props);
+       
     return (
         <div class="loversMap">
-            {!lovers || lovers.length === 0 ? <div>No lovers found</div> : lovers.map((lover)=><SimpleLove {...lover}/>)}
+            { props.props.length !== 0 ? <div>No lovers found</div> : props.props.map((lover)=>{return(<div>lover.age</div>)})}
         </div>
     )
 }

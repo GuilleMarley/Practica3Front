@@ -2,3 +2,7 @@
 @import url("/layout.css");
 @import url("/profiles.css");
 @import url("/SimpleLover.css");
+
+body{
+    background-image: url("https://media.istockphoto.com/id/941733700/vector/seamless-pattern-with-hand-drawn-hearts-vector-illustration-in-scandinavian-style.jpg?s=612x612&w=0&k=20&c=pIJSxrGeFx4jIbtO5E_gWXCYc8zde8JvxUHP42p65WA=");
+}

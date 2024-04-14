@@ -2,33 +2,35 @@ import { FreshContext, Handlers } from "$fresh/server.ts";
 import axios from "npm:axios";
 import LoginProfile from "../islands/LoginProfile.tsx";
 
-const handler:Handlers = {
-    GET: async(_req:Request, ctx: FreshContext) => {
-        return ctx.render();
-    },
+export const handler:Handlers = {
     POST: async(req:Request, ctx: FreshContext) => {
-        //axios get profile from lovers.deno.dev
         const profile = await req.formData();
-        const name = profile.get("name");
-        const password = profile.get("password");
-        console.log(name, password);
+        const form = {
+            name : profile.get("name"),
+            password : profile.get("password")
+        }
 
-        /*const response = await axios.post(`https://lovers.deno.dev/login`, { 
-            name: name,
-            password: password 
-        });*/
-        const response = await fetch(`https://lovers.deno.dev/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name:name, password: password }),
-        });
-        console.log(response);
-    if(!response) return ctx.render("POST Failed!", {status: 400, headers: {Location: "/newProfile"}});
-    console.log(ctx.route);
-    return ctx.render("Logged in");
-}
+        try {
+            const response = await axios.post("https://lovers.deno.dev/login", { 
+                name: form.name,
+                password: form.password 
+            },{
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
+
+            return new Response(null, { status: 302, headers: { Location: '/' } });
+        } catch (error) {
+            if (error.response && error.response.status === 404) {
+                return new Response(null, { status: 302, headers: { Location: '/newProfile' } });
+            }
+            if (error.response && error.response.status === 401) {
+                return new Response(null, { status: 302, headers: { Location: '/login' } });
+            }
+            throw error;
+        }
+    }
 }
 
 const Page = ( ) => {

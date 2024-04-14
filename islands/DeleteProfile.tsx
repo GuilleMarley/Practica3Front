@@ -7,7 +7,7 @@ const AddProfile:FunctionComponent = () => {
     const [password, setPassword] = useState<string>("");
 
     return (
-        <form action = "/deleteProfile" method = "POST">
+        <form action = "/deleteProfile" method = "POST" class="delete-form">
         
             <input 
             type = "text" 
